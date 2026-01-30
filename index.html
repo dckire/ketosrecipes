@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ ESTO CAMBIÓ MI SALUD - No Guardes Este Secreto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5fff5 0%, #e0f7fa 100%);
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .viral-container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 100, 0, 0.15);
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* URGE BADGE */
+        .urgent-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(45deg, #ff4444, #ff8800);
+            color: white;
+            padding: 10px 40px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+        }
+        
+        /* HEADER - Diseño de "secreto compartido" */
+        .secret-header {
+            background: linear-gradient(90deg, #1a237e, #283593, #3949ab);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .secret-header::before {
+            content: "🤫";
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.1;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .secret-header h1 {
+            font-size: 1.9rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .secret-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        /* CONTADOR SOCIAL */
+        .social-proof {
+            background: #f5f5f5;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px dashed #ddd;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .social-count {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .social-text {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* TESTIMONIO VIRAL */
+        .viral-testimonial {
+            padding: 25px;
+            background: #fff8e1;
+            border-left: 5px solid #ffb300;
+            margin: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .viral-testimonial::before {
+            content: "“";
+            position: absolute;
+            font-size: 60px;
+            color: #ffb300;
+            top: 10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: #5d4037;
+        }
+        
+        /* COMPARACIÓN VISUAL */
+        .comparison {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 20px 0;
+        }
+        
+        .before, .after {
+            text-align: center;
+            width: 48%;
+        }
+        
+        .before-img, .after-img {
+            width: 100%;
+            height: 120px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .before-img {
+            background: linear-gradient(135deg, #bdbdbd, #757575);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .after-img {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        /* OFERTA QUE "DESAPARECE" */
+        .disappearing-offer {
+            background: linear-gradient(45deg, #d50000, #ff1744);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .disappearing-offer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .countdown {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        
+        .price-viral {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        }
+        
+        /* CTA VIRAL */
+        .cta-viral {
+            display: block;
+            width: 90%;
+            margin: 20px auto;
+            background: linear-gradient(45deg, #00c853, #64dd17);
+            color: white;
+            padding: 20px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 200, 83, 0.4);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-viral:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 200, 83, 0.6);
+        }
+        
+        .cta-viral::after {
+            content: "👉 ¡CLIC AQUÍ ANTES DE QUE SE ACABE! 👈";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff4081, #f50057);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .cta-viral:hover::after {
+            opacity: 1;
+        }
+        
+        /* PROOF ELEMENTS - Elementos de prueba social */
+        .proof-elements {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .proof-item {
+            text-align: center;
+        }
+        
+        .proof-icon {
+            font-size: 2rem;
+            color: #4caf50;
+            margin-bottom: 5px;
+        }
+        
+        /* SHARE TRIGGERS - Incentivos para compartir */
+        .share-trigger {
+            background: #e3f2fd;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px dashed #bbdefb;
+        }
+        
+        .share-trigger p {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #1565c0;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .share-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .fb { background: #3b5998; }
+        .wa { background: #25d366; }
+        .ig { background: #e4405f; }
+        
+        /* SCARCITY ELEMENTS - Escasez */
+        .scarcity {
+            background: #ffebee;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            border-top: 1px solid #ffcdd2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .secret-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .price-viral {
+                font-size: 2.5rem;
+            }
+            
+            .urgent-badge {
+                font-size: 0.7rem;
+                right: -40px;
+                padding: 8px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="viral-container">
+        <!-- BADGE URGENTE -->
+        <div class="urgent-badge">🔥 VIRAL</div>
+        
+        <!-- ENCABEZADO DE "SECRETO" -->
+        <div class="secret-header">
+            <h1>⚠️ ESTO CAMBIÓ MI SALUD</h1>
+            <p><i class="fas fa-lock"></i> <strong>Secreto que nadie te cuenta</strong> <i class="fas fa-lock"></i></p>
+        </div>
+        
+        <!-- PRUEBA SOCIAL - Personas que ya lo vieron -->
+        <div class="social-proof">
+            <div>
+                <div class="social-count" id="viewCount">1,247</div>
+                <div class="social-text">personas lo vieron HOY</div>
+            </div>
+            <div>
+                <div class="social-count">🏆 #1</div>
+                <div class="social-text">en tendencia salud</div>
+            </div>
+        </div>
+        
+        <!-- TESTIMONIO VIRAL -->
+        <div class="viral-testimonial">
+            <div class="testimonial-text">
+                "Perdí 8kg en 3 semanas sin dietas. Mis amigos me preguntan qué hice diferente. 
+                Les digo que es un secreto que encontré en internet. 
+                <strong>No debería guardar esto solo para mí</strong>."
+            </div>
+            <div class="testimonial-author">- Ana M., 34 años</div>
+        </div>
+        
+        <!-- COMPARACIÓN ANTES/DESPUÉS -->
+        <div class="comparison">
+            <div class="before">
+                <div class="before-img">😞</div>
+                <div><strong>ANTES:</strong><br>Cansado, inflamado, sin energía</div>
+            </div>
+            <div class="after">
+                <div class="after-img">😃</div>
+                <div><strong>DESPUÉS:</strong><br>Energía, vitalidad, salud renovada</div>
+            </div>
+        </div>
+        
+        <!-- LO QUE VAS A RECIBIR -->
+        <div style="padding: 20px; text-align: center;">
+            <h2 style="color: #1a237e; margin-bottom: 15px;">¿QUÉ RECIBIRÁS?</h2>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 10px; width: 45%;">
+                    <i class="fas fa-book" style="color: #4caf50;"></i> 100+ recetas secretas
+                </div>
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 10px; width: 45%;">
+                    <i class="fas fa-gift" style="color: #ff9800;"></i> 2 bonos EXCLUSIVOS
+                </div>
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 10px; width: 45%;">
+                    <i class="fas fa-bolt" style="color: #ffeb3b;"></i> Energía inmediata
+                </div>
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 10px; width: 45%;">
+                    <i class="fas fa-shield-alt" style="color: #2196f3;"></i> Salud blindada
+                </div>
+            </div>
+        </div>
+        
+        <!-- OFERTA QUE DESAPARECE -->
+        <div class="disappearing-offer">
+            <h3>⚠️ OFERTA TERMINA EN:</h3>
+            <div class="countdown" id="countdown">15:00</div>
+            <div style="margin: 15px 0;">
+                <span style="text-decoration: line-through; opacity: 0.8;">$24.99 USD</span>
+                <div class="price-viral">$14.99 USD</div>
+            </div>
+            <p>Precio sube cuando el temporizador llegue a cero</p>
+        </div>
+        
+        <!-- BOTÓN VIRAL PRINCIPAL -->
+        <a href="https://go.hotmart.com/O104149889C" class="cta-viral" target="_blank">
+            <span class="cta-text">¡QUIERO EL SECRETO! 👇</span>
+        </a>
+        
+        <!-- ELEMENTOS DE PRUEBA SOCIAL -->
+        <div class="proof-elements">
+            <div class="proof-item">
+                <div class="proof-icon">✅</div>
+                <div>Acceso inmediato</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon">🛡️</div>
+                <div>Garantía 7 días</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon">📱</div>
+                <div>En tu teléfono</div>
+            </div>
+        </div>
+        
+        <!-- INCENTIVO PARA COMPARTIR -->
+        <div class="share-trigger">
+            <p>¿Conoces a alguien que necesita esto? <br><strong>Comparte y podrías salvar su salud</strong></p>
+            <div class="share-buttons">
+                <a href="#" class="share-btn fb" onclick="shareOnFB()"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-btn wa" onclick="shareOnWA()"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="share-btn ig" onclick="shareOnIG()"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- ELEMENTO DE ESCASEZ -->
+        <div class="scarcity" id="stockMessage">
+            ⚠️ SOLO 37 COPIA(S) DISPONIBLES A ESTE PRECIO
+        </div>
+    </div>
+
+    <script>
+        // CONTADOR DE VISTAS (aumenta cada 3 segundos)
+        let viewCount = 1247;
+        const viewElement = document.getElementById('viewCount');
+        
+        setInterval(() => {
+            viewCount += Math.floor(Math.random() * 5) + 1;
+            viewElement.textContent = viewCount.toLocaleString();
+        }, 3000);
+        
+        // TEMPORIZADOR DE CUENTA REGRESIVA
+        let countdownTime = 15 * 60; // 15 minutos en segundos
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            countdownTime--;
+            const minutes = Math.floor(countdownTime / 60);
+            const seconds = countdownTime % 60;
+            
+            countdownElement.textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Cambiar color cuando queden menos de 5 minutos
+            if (countdownTime < 5 * 60) {
+                countdownElement.style.color = '#ff4444';
+            }
+            
+            // Cuando llegue a cero
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "¡OFERTA TERMINADA!";
+                document.querySelector('.disappearing-offer').style.background = 
+                    'linear-gradient(45deg, #616161, #9e9e9e)';
+            }
+        }, 1000);
+        
+        // MENSAJE DE STOCK QUE CAMBIA
+        const stockMessages = [
+            "⚠️ SOLO 37 COPIA(S) DISPONIBLES A ESTE PRECIO",
+            "🚨 12 PERSONAS VIENDO ESTO AHORA MISMO",
+            "🔥 5 COPIAS VENDIDAS EN LOS ÚLTIMOS 10 MINUTOS"
+        ];
+        
+        let stockIndex = 0;
+        const stockElement = document.getElementById('stockMessage');
+        
+        setInterval(() => {
+            stockIndex = (stockIndex + 1) % stockMessages.length;
+            stockElement.textContent = stockMessages[stockIndex];
+            
+            // Efecto visual
+            stockElement.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                stockElement.style.transform = 'scale(1)';
+            }, 300);
+        }, 5000);
+        
+        // FUNCIONES PARA COMPARTIR (simuladas)
+        function shareOnFB() {
+            alert("¡Compartido en Facebook! \n\nMensaje sugerido: 'Acabo de encontrar este secreto para transformar la salud. ¡Míralo antes de que desaparezca!'");
+            return false;
+        }
+        
+        function shareOnWA() {
+            alert("¡Compartido en WhatsApp! \n\nEnlace copiado. Ahora compártelo con tus amigos y familiares que necesiten mejorar su salud.");
+            return false;
+        }
+        
+        function shareOnIG() {
+            alert("¡Compartido en Instagram! \n\nRecuerda usar los hashtags: #SecretoSalud #JugosDetox #TransformaciónViral");
+            return false;
+        }
+        
+        // EFECTO DE "VISTO POR ULTIMA VEZ"
+        window.addEventListener('beforeunload', function() {
+            // Efecto visual al salir
+            document.body.style.opacity = '0.8';
+        });
+        
+        // ANIMACIÓN AL HACER CLIC EN CUALQUIER LUGAR
+        document.addEventListener('click', function(e) {
+            // Solo si no es un enlace
+            if (e.target.tagName !== 'A') {
+                const ripple = document.createElement('div');
+                ripple.style.position = 'fixed';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(76, 175, 80, 0.3)';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.zIndex = '9999';
+                
+                const size = 10;
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                
+                document.body.appendChild(ripple);
+                
+                // Animación
+                const animation = ripple.animate([
+                    { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                    { transform: 'translate(-50%, -50%) scale(20)', opacity: 0 }
+                ], {
+                    duration: 800,
+                    easing: 'ease-out'
+                });
+                
+                animation.onfinish = () => ripple.remove();
+            }
+        });
+    </script>
+</body>
+</html>
